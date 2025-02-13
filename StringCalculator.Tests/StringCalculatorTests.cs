@@ -54,8 +54,16 @@ namespace StringCalculator.Tests
         [TestMethod]
         public void Add_NegativeNumbers_ThrowsException()
         {
-            var ex = Assert.ThrowsException<ArgumentException>(() => _calculator.Add("1,-2,-3"));
-            StringAssert.Contains(ex.Message, "negatives not allowed: -2, -3");
+            var ex = Assert.ThrowsException<ArgumentException>(() => _calculator.Add("1,-2,-3,4,-5"));
+            StringAssert.Contains(ex.Message, "negatives not allowed: -2, -3, -5");
+        }
+
+        [TestMethod]
+        public void GetCalledCount_ReturnsCorrectInvocationCount()
+        {
+            _calculator.Add("1,2");
+            _calculator.Add("3,4,5");
+            Assert.AreEqual(2, _calculator.GetCalledCount());
         }
     }
 }
