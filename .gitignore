@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/StringCalculator
+/StringCalculator.App/bin/Debug
+/StringCalculator.App/obj/Debug
+/StringCalculator.Tests/bin/Debug
+/StringCalculator.Tests/obj/Debug
